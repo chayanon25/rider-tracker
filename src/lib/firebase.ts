@@ -7,7 +7,7 @@ const isLocal = typeof window !== 'undefined' &&
 
 const firebaseConfig = {
   apiKey: "AIzaSyBtvuWOIsVta9TXR1NKWaHk5ow3hNlcSbA",
-  authDomain: isLocal ? "thames-8e263.firebaseapp.com" : window.location.hostname,
+  authDomain: isLocal ? "thames-8e263.firebaseapp.com" : "rider-tracker-pied.vercel.app",
   projectId: "thames-8e263",
   storageBucket: "thames-8e263.firebasestorage.app",
   messagingSenderId: "399430634422",
