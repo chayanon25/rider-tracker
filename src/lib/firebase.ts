@@ -2,9 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+const isLocal = typeof window !== 'undefined' && 
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+
 const firebaseConfig = {
   apiKey: "AIzaSyBtvuWOIsVta9TXR1NKWaHk5ow3hNlcSbA",
-  authDomain: "thames-8e263.firebaseapp.com",
+  authDomain: isLocal ? "thames-8e263.firebaseapp.com" : window.location.hostname,
   projectId: "thames-8e263",
   storageBucket: "thames-8e263.firebasestorage.app",
   messagingSenderId: "399430634422",
