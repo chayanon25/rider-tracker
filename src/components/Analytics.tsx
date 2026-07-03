@@ -97,10 +97,10 @@ export function Analytics({ transactions }: AnalyticsProps) {
               const expenseHeight = (day.expense / maxDailyValue) * 90;
 
               return (
-                <div key={day.date} className="flex-1 flex flex-col items-center h-full justify-end">
-                  <div className="flex items-end gap-1 w-full justify-center h-[90%]">
+                <div key={day.date} className="flex-1 flex flex-col items-center h-full justify-end min-w-0">
+                  <div className="flex items-end gap-0.5 md:gap-1 w-full justify-center h-[85%]">
                     {/* Income Bar (Green) */}
-                    <div className="relative group flex justify-center items-end h-full w-5">
+                    <div className="relative group flex justify-center items-end h-full w-3 md:w-5">
                       {day.income > 0 && (
                         <>
                           <div className="absolute bottom-full mb-1 scale-0 group-hover:scale-100 bg-slate-950 text-white text-[9px] font-bold px-2 py-1 rounded transition-all z-10 whitespace-nowrap shadow-md">
@@ -115,7 +115,7 @@ export function Analytics({ transactions }: AnalyticsProps) {
                     </div>
 
                     {/* Expense Bar (Red) */}
-                    <div className="relative group flex justify-center items-end h-full w-5">
+                    <div className="relative group flex justify-center items-end h-full w-3 md:w-5">
                       {day.expense > 0 && (
                         <>
                           <div className="absolute bottom-full mb-1 scale-0 group-hover:scale-100 bg-slate-950 text-white text-[9px] font-bold px-2 py-1 rounded transition-all z-10 whitespace-nowrap shadow-md">
@@ -130,10 +130,11 @@ export function Analytics({ transactions }: AnalyticsProps) {
                     </div>
                   </div>
 
-                  {/* Day Label */}
-                  <span className="text-[9px] md:text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-3 rotate-45 md:rotate-0 whitespace-nowrap">
-                    {day.label}
-                  </span>
+                  {/* Day Label (Two lines on mobile to prevent overflow) */}
+                  <div className="text-[9px] md:text-[10px] font-bold text-slate-500 dark:text-slate-400 mt-2.5 flex flex-col items-center leading-tight">
+                    <span>{day.label.substring(0, 5)}</span>
+                    <span className="text-[7.5px] text-slate-450 dark:text-slate-500 font-semibold">{day.label.substring(6)}</span>
+                  </div>
                 </div>
               );
             })}
