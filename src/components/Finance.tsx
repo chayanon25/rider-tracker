@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Transaction } from '../types';
-import { Plus, Trash2, TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { Plus, Trash2, TrendingUp, TrendingDown } from 'lucide-react';
 
 interface FinanceProps {
   transactions: Transaction[];
