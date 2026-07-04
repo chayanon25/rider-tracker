@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Vehicle } from '../types';
-import { Sun, Moon, Edit3, Check, Plus, Wrench } from 'lucide-react';
+import { Sun, Moon, Edit3, Check, Plus, Briefcase } from 'lucide-react';
 import { MaintenanceList } from './MaintenanceList';
 
 interface DashboardProps {
@@ -141,7 +141,7 @@ export function Dashboard({
         {showAddCustom && (
           <div className="premium-card p-5 border border-blue-100 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50">
             <h4 className="text-sm font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-1.5">
-              <Wrench size={14} className="text-blue-600" />
+              <Briefcase size={14} className="text-indigo-600 dark:text-indigo-400" />
               เพิ่มรายการตรวจสอบที่ต้องการแทร็ก
             </h4>
             <form onSubmit={handleAddCustomSubmit} className="space-y-3">

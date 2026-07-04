@@ -1,4 +1,4 @@
-import { Wrench, CircleDollarSign, BarChart3 } from 'lucide-react';
+import { Wrench, CircleDollarSign, BarChart3, Briefcase } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: 'maintenance' | 'finance' | 'analytics';
@@ -25,7 +25,7 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
               onClick={() => onTabChange(tab.id)}
               className={`flex flex-col items-center justify-center w-20 h-full transition-colors cursor-pointer ${
                 isActive 
-                  ? 'text-blue-600 dark:text-blue-400' 
+                  ? 'text-indigo-600 dark:text-indigo-400' 
                   : 'text-slate-400 dark:text-slate-500'
               }`}
             >
@@ -39,11 +39,11 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
       {/* Desktop: Sidebar Menu */}
       <aside className="hidden md:flex flex-col w-64 fixed top-0 left-0 bottom-0 bg-white/50 dark:bg-slate-900/30 border-r border-slate-200/60 dark:border-slate-800/80 glass-effect p-6 z-40">
         <div className="flex items-center gap-3 mb-8 px-2">
-          <div className="p-2.5 bg-blue-600 rounded-2xl text-white shadow-md shadow-blue-500/20">
-            <Wrench size={22} />
+          <div className="p-2.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl text-white shadow-md shadow-indigo-500/20">
+            <Briefcase size={22} />
           </div>
           <div>
-            <h1 className="font-black text-lg tracking-tight text-slate-900 dark:text-white leading-tight">Rider Tracker</h1>
+            <h1 className="font-black text-lg tracking-tight text-slate-900 dark:text-white leading-tight">WorkNotes</h1>
             <span className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">SaaS Dashboard</span>
           </div>
         </div>
@@ -59,7 +59,7 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
                 onClick={() => onTabChange(tab.id)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
                   isActive 
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25' 
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/25' 
                     : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80'
                 }`}
               >

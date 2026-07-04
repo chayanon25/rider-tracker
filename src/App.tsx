@@ -7,7 +7,7 @@ import { Dashboard } from './components/Dashboard';
 import { Finance } from './components/Finance';
 import { Analytics } from './components/Analytics';
 import { Navigation } from './components/Navigation';
-import { Wrench, LogOut } from 'lucide-react';
+import { Briefcase, LogOut } from 'lucide-react';
 import './index.css';
 
 type TabType = 'maintenance' | 'finance' | 'analytics';
@@ -57,11 +57,8 @@ function App() {
         <div className="absolute bottom-1/4 left-1/3 -translate-y-1/2 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
 
         <div className="w-full max-w-md text-center premium-card p-10 relative z-10 bg-white/70 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/50 shadow-2xl">
-          <div className="inline-flex p-5 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 text-indigo-600 dark:text-indigo-400 rounded-[24px] mb-8 shadow-sm">
-            <Wrench size={36} className="animate-pulse" />
-          </div>
-          <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
-            Rider <span className="bg-gradient-to-r from-indigo-600 to-purple-500 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">Tracker</span>
+          <h1 className="text-4xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+            Work<span className="bg-gradient-to-r from-indigo-600 to-purple-500 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">Notes</span>
           </h1>
           <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-8 leading-relaxed px-4">
             แอปผู้ช่วยอัจฉริยะ ติดตามระยะบำรุงรักษามอเตอร์ไซค์สำหรับไรเดอร์มืออาชีพ บันทึกรายรับรายจ่ายแบบเรียลไทม์ ซิงค์ข้ามอุปกรณ์ไร้กังวล
@@ -95,11 +92,11 @@ function App() {
           {/* Header (Top Nav) - Hidden on desktop sidebar logo but keeps user panel */}
           <header className="flex justify-between items-center premium-card p-4">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-blue-600/10 rounded-2xl md:hidden">
-                <Wrench size={22} className="text-blue-600 dark:text-blue-400" />
+              <div className="p-2.5 bg-indigo-600/10 rounded-2xl md:hidden">
+                <Briefcase size={22} className="text-indigo-600 dark:text-indigo-400" />
               </div>
               <div>
-                <h1 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight md:hidden">Rider Tracker</h1>
+                <h1 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight md:hidden">WorkNotes</h1>
                 <h1 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight hidden md:block">
                   {activeTab === 'maintenance' && 'ระบบการดูแลรักษารถ'}
                   {activeTab === 'finance' && 'ระบบบัญชีการเงิน'}
