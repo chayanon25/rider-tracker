@@ -10,43 +10,92 @@
 body {
   font-family: var(--font-sans);
   background-attachment: fixed;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Light mode gradient background */
 html.light body {
-  background: radial-gradient(circle at top left, #eff6ff, #f8fafc);
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(224, 242, 254, 0.6) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(243, 232, 255, 0.4) 0%, transparent 40%),
+    #f8fafc;
   color: #0f172a;
 }
 
-/* Dark mode gradient background */
+/* Dark mode gradient background - Ultra premium slate/indigo glow */
 html.dark body {
-  background: radial-gradient(circle at top left, #0b0f19, #020617);
-  color: #f8fafc;
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+    #050811;
+  color: #f1f5f9;
 }
 
-/* Custom premium glass card styling */
+/* Custom premium glass card styling (Minimal Lux Glassmorphism) */
 .premium-card {
-  @apply rounded-3xl border transition-all duration-300;
+  @apply rounded-[28px] border transition-all duration-350 ease-[cubic-bezier(0.16,1,0.3,1)];
 }
 
 html.light .premium-card {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(241, 245, 249, 0.8);
-  box-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.12), 0 1px 3px rgba(148, 163, 184, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(241, 245, 249, 0.9);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.02),
+    0 1px 2px rgba(0, 0, 0, 0.01),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 html.dark .premium-card {
-  background: rgba(17, 24, 39, 0.5);
-  border-color: rgba(31, 41, 55, 0.6);
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(13, 20, 38, 0.45);
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 
+    0 10px 40px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
-/* Hover scales and premium animations */
-.hover-premium {
-  @apply hover:scale-[1.01] hover:shadow-lg active:scale-98 transition-all duration-200;
+/* Hover effect for clickable premium cards */
+.premium-card-clickable {
+  @apply hover:scale-[1.015] hover:border-blue-500/20 dark:hover:border-purple-500/20 active:scale-[0.985] cursor-pointer;
+}
+
+html.light .premium-card-clickable:hover {
+  box-shadow: 
+    0 20px 40px -15px rgba(148, 163, 184, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+html.dark .premium-card-clickable:hover {
+  background: rgba(17, 27, 51, 0.55);
+  box-shadow: 
+    0 20px 50px -15px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 99px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
 }
