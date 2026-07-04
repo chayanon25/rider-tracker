@@ -1,4 +1,4 @@
-import { Wrench, CircleDollarSign, BarChart3, Briefcase } from 'lucide-react';
+import { Wrench, CircleDollarSign, BarChart3 } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: 'maintenance' | 'finance' | 'analytics';
@@ -38,14 +38,9 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
 
       {/* Desktop: Sidebar Menu */}
       <aside className="hidden md:flex flex-col w-64 fixed top-0 left-0 bottom-0 bg-white/50 dark:bg-slate-900/30 border-r border-slate-200/60 dark:border-slate-800/80 glass-effect p-6 z-40">
-        <div className="flex items-center gap-3 mb-8 px-2">
-          <div className="p-2.5 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl text-white shadow-md shadow-indigo-500/20">
-            <Briefcase size={22} />
-          </div>
-          <div>
-            <h1 className="font-black text-lg tracking-tight text-slate-900 dark:text-white leading-tight">WorkNotes</h1>
-            <span className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">SaaS Dashboard</span>
-          </div>
+        <div className="mb-8 px-2">
+          <h1 className="font-black text-2xl tracking-tight bg-gradient-to-r from-indigo-600 to-purple-500 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent leading-none">WorkNotes</h1>
+          <span className="text-[9px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest block mt-1">SaaS Dashboard</span>
         </div>
 
         <div className="flex-1 space-y-2">

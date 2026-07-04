@@ -7,7 +7,7 @@ import { Dashboard } from './components/Dashboard';
 import { Finance } from './components/Finance';
 import { Analytics } from './components/Analytics';
 import { Navigation } from './components/Navigation';
-import { Briefcase, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import './index.css';
 
 type TabType = 'maintenance' | 'finance' | 'analytics';
@@ -91,10 +91,7 @@ function App() {
           
           {/* Header (Top Nav) - Hidden on desktop sidebar logo but keeps user panel */}
           <header className="flex justify-between items-center premium-card p-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 bg-indigo-600/10 rounded-2xl md:hidden">
-                <Briefcase size={22} className="text-indigo-600 dark:text-indigo-400" />
-              </div>
+            <div className="flex items-center">
               <div>
                 <h1 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight md:hidden">WorkNotes</h1>
                 <h1 className="font-extrabold text-base text-slate-900 dark:text-white tracking-tight hidden md:block">
